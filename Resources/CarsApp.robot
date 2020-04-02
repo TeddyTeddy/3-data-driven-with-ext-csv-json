@@ -1,10 +1,12 @@
 *** Settings ***
 Resource  ../Resources/PO/SignIn.robot
+Resource  ../Resources/DataManager.robot
 
 *** Keywords ***
 Login with Many Invalid Credentials
-    [Arguments]  ${InvalidLoginScenarios}
-    FOR  ${LoginScenario}  IN  @{InvalidLoginScenarios}
+    FOR  ${LoginScenarioNo}  IN RANGE     99999
+        ${LoginScenario} =   DataManager.Get Row From CSV File
+        Exit For Loop If   $LoginScenario is None
         run keyword and continue on failure  SignIn.Navigate To
         run keyword and continue on failure  Attempt Login  ${LoginScenario}
         run keyword and continue on failure  Verify Login Page Error Message  ${LoginScenario[2]}

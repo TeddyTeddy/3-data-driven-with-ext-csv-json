@@ -1,10 +1,10 @@
 *** Settings ***
 Documentation  Use this layer to get data from external files
-Library  ../CustomLibs/Csv.py
+Resource  ../Data/InputData.robot
+Library  ../CustomLibs/CSV_Reader.py   ${INVALID_CREDENTIALS_PATH_CSV}
 
 
 *** Keywords ***
-Get CSV Data
-    [Arguments]  ${FilePath}
-    ${Data} =  read csv file  ${FilePath}
+Get Row From CSV File
+    ${Data} =  read row from csv file
     [Return]  ${Data}
