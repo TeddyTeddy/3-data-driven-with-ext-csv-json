@@ -1,9 +1,6 @@
 import csv
 from robot.api.deco import keyword
 
-def return_value(reader):
-    for row in reader:
-        yield row
 
 class CSV_Reader:
 
@@ -16,7 +13,7 @@ class CSV_Reader:
 
     @keyword
     def read_row_from_csv_file(self):
-        iterator = return_value(self._reader)
+        iterator = iter(self._reader)
         try:
             row = next(iterator)
         except StopIteration:
