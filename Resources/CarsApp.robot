@@ -1,4 +1,5 @@
 *** Settings ***
+Resource  ../Data/InputData.robot
 Resource  ../Resources/PO/SignIn.robot
 Resource  ../Resources/DataManager.robot
 
