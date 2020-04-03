@@ -1,0 +1,17 @@
+[
+    {
+        "email": "unregistered.user@gmail.com",
+        "password": "TestPassword!",
+        "ErrorMessage": "Your username and/or password is incorrect. Please try again."
+    },
+    {
+        "email": "hakan.cuzdan@gmail.com",
+        "password": "InvalidPassword",
+        "ErrorMessage": "Forgot Your Password?"
+    },
+    {
+        "email": "#BLANK",
+        "password": "#BLANK",
+        "ErrorMessage": "Please enter your email address and password."
+    }
+]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.4 on linux)" generated="20200402 17:07:06.097" rpa="false">
-<suite id="s1" name="Cars" source="/home/hakan/Python/Robot/data-driven/3-data-driven-with-ext-csv/Tests/Cars.robot">
+<robot generator="Robot 3.1.2 (Python 3.7.4 on linux)" generated="20200403 11:13:10.573" rpa="false">
+<suite id="s1" name="Cars" source="/home/hakan/Python/Robot/data-driven/3-data-driven-with-ext-csv-json/Tests/Cars.robot">
 <test id="s1-t1" name="Should see correct error messages with invalid logins">
 <kw name="Begin Web Test" library="Common" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -9,15 +9,15 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:06.228" level="INFO">Opening browser 'ff' to base url 'about:blank'.</msg>
-<msg timestamp="20200402 17:07:06.229" level="INFO">Firefox driver log is always forced to to: /home/hakan/Python/Robot/data-driven/3-data-driven-with-ext-csv/Results/geckodriver-10.log</msg>
-<status status="PASS" starttime="20200402 17:07:06.228" endtime="20200402 17:07:12.495"></status>
+<msg timestamp="20200403 11:13:10.777" level="INFO">Opening browser 'ff' to base url 'about:blank'.</msg>
+<msg timestamp="20200403 11:13:10.777" level="INFO">Firefox driver log is always forced to to: /home/hakan/Python/Robot/data-driven/3-data-driven-with-ext-csv-json/Results/geckodriver-16.log</msg>
+<status status="PASS" starttime="20200403 11:13:10.776" endtime="20200403 11:13:18.842"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200402 17:07:12.495" endtime="20200402 17:07:12.879"></status>
+<status status="PASS" starttime="20200403 11:13:18.842" endtime="20200403 11:13:19.247"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:06.228" endtime="20200402 17:07:12.879"></status>
+<status status="PASS" starttime="20200403 11:13:10.776" endtime="20200403 11:13:19.247"></status>
 </kw>
 <kw name="Login with Many Invalid Credentials" library="CarsApp">
 <kw name="${LoginScenarioNo} IN RANGE [ 99999 ]" type="for">
@@ -28,20 +28,20 @@
 </assign>
 <kw name="Read Row From Csv File" library="CSV_Reader">
 <assign>
-<var>${Data}</var>
+<var>${row}</var>
 </assign>
-<msg timestamp="20200402 17:07:12.883" level="INFO">${Data} = ['unregistered.user@gmail.com', 'TestPassword!', 'Your username and/or password is incorrect. Please try again.']</msg>
-<status status="PASS" starttime="20200402 17:07:12.883" endtime="20200402 17:07:12.887"></status>
+<msg timestamp="20200403 11:13:19.302" level="INFO">${row} = ['unregistered.user@gmail.com', 'TestPassword!', 'Your username and/or password is incorrect. Please try again.']</msg>
+<status status="PASS" starttime="20200403 11:13:19.301" endtime="20200403 11:13:19.302"></status>
 </kw>
-<msg timestamp="20200402 17:07:12.887" level="INFO">${LoginScenario} = ['unregistered.user@gmail.com', 'TestPassword!', 'Your username and/or password is incorrect. Please try again.']</msg>
-<status status="PASS" starttime="20200402 17:07:12.882" endtime="20200402 17:07:12.887"></status>
+<msg timestamp="20200403 11:13:19.302" level="INFO">${LoginScenario} = ['unregistered.user@gmail.com', 'TestPassword!', 'Your username and/or password is incorrect. Please try again.']</msg>
+<status status="PASS" starttime="20200403 11:13:19.298" endtime="20200403 11:13:19.302"></status>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
 <arguments>
 <arg>$LoginScenario is None</arg>
 </arguments>
-<status status="PASS" starttime="20200402 17:07:12.888" endtime="20200402 17:07:12.902"></status>
+<status status="PASS" starttime="20200403 11:13:19.303" endtime="20200403 11:13:19.368"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -59,20 +59,20 @@
 <assign>
 <var>${SignInUrl}</var>
 </assign>
-<msg timestamp="20200402 17:07:12.903" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
-<status status="PASS" starttime="20200402 17:07:12.902" endtime="20200402 17:07:12.903"></status>
+<msg timestamp="20200403 11:13:19.373" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20200403 11:13:19.369" endtime="20200403 11:13:19.374"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${SignInUrl}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:12.903" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
-<status status="PASS" starttime="20200402 17:07:12.903" endtime="20200402 17:07:21.148"></status>
+<msg timestamp="20200403 11:13:19.374" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20200403 11:13:19.374" endtime="20200403 11:13:29.482"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:12.902" endtime="20200402 17:07:21.148"></status>
+<status status="PASS" starttime="20200403 11:13:19.369" endtime="20200403 11:13:29.482"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:12.902" endtime="20200402 17:07:21.148"></status>
+<status status="PASS" starttime="20200403 11:13:19.368" endtime="20200403 11:13:29.482"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -102,10 +102,10 @@
 <arg>${SIGN_IN_EMAIL_FIELD}</arg>
 <arg>${Credentials[0]}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:21.150" level="INFO">Typing text 'unregistered.user@gmail.com' into text field 'xpath=//input[@ng-model='$ctrl.credentials.email']'.</msg>
-<status status="PASS" starttime="20200402 17:07:21.149" endtime="20200402 17:07:21.653"></status>
+<msg timestamp="20200403 11:13:29.499" level="INFO">Typing text 'unregistered.user@gmail.com' into text field 'xpath=//input[@ng-model='$ctrl.credentials.email']'.</msg>
+<status status="PASS" starttime="20200403 11:13:29.488" endtime="20200403 11:13:29.806"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:21.149" endtime="20200402 17:07:21.653"></status>
+<status status="PASS" starttime="20200403 11:13:29.484" endtime="20200403 11:13:29.806"></status>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
@@ -121,12 +121,12 @@
 <arg>${SIGN_IN_PASSWORD_FIELD}</arg>
 <arg>${Credentials[1]}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:21.654" level="INFO">Typing text 'TestPassword!' into text field 'xpath=//input[@ng-model='$ctrl.credentials.password']'.</msg>
-<status status="PASS" starttime="20200402 17:07:21.654" endtime="20200402 17:07:21.853"></status>
+<msg timestamp="20200403 11:13:29.808" level="INFO">Typing text 'TestPassword!' into text field 'xpath=//input[@ng-model='$ctrl.credentials.password']'.</msg>
+<status status="PASS" starttime="20200403 11:13:29.807" endtime="20200403 11:13:30.152"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:21.654" endtime="20200402 17:07:21.853"></status>
+<status status="PASS" starttime="20200403 11:13:29.806" endtime="20200403 11:13:30.152"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:21.149" endtime="20200402 17:07:21.853"></status>
+<status status="PASS" starttime="20200403 11:13:29.483" endtime="20200403 11:13:30.152"></status>
 </kw>
 <kw name="Click Submit" library="SignIn">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -134,22 +134,22 @@
 <arguments>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:21.854" level="INFO">Clicking button 'Log In'.</msg>
-<status status="PASS" starttime="20200402 17:07:21.854" endtime="20200402 17:07:22.341"></status>
+<msg timestamp="20200403 11:13:30.153" level="INFO">Clicking button 'Log In'.</msg>
+<status status="PASS" starttime="20200403 11:13:30.153" endtime="20200403 11:13:30.778"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:21.853" endtime="20200402 17:07:22.341"></status>
+<status status="PASS" starttime="20200403 11:13:30.152" endtime="20200403 11:13:30.778"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200402 17:07:25.342" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200402 17:07:22.341" endtime="20200402 17:07:25.342"></status>
+<msg timestamp="20200403 11:13:33.781" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200403 11:13:30.779" endtime="20200403 11:13:33.782"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:21.148" endtime="20200402 17:07:25.342"></status>
+<status status="PASS" starttime="20200403 11:13:29.483" endtime="20200403 11:13:33.782"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:21.148" endtime="20200402 17:07:25.342"></status>
+<status status="PASS" starttime="20200403 11:13:29.482" endtime="20200403 11:13:33.782"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -170,21 +170,16 @@
 <arguments>
 <arg>${ExpectedErrorMessage}</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200402 17:07:25.573" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200402 17:07:25.492" endtime="20200402 17:07:25.573"></status>
+<msg timestamp="20200403 11:13:33.881" level="INFO">Current page contains text 'Your username and/or password is incorrect. Please try again.'.</msg>
+<status status="PASS" starttime="20200403 11:13:33.788" endtime="20200403 11:13:33.882"></status>
 </kw>
-<msg timestamp="20200402 17:07:25.574" level="FAIL">Page should have contained text 'Your username and/or password is incorrect. Please try again.' but did not.</msg>
-<status status="FAIL" starttime="20200402 17:07:25.343" endtime="20200402 17:07:25.574"></status>
+<status status="PASS" starttime="20200403 11:13:33.787" endtime="20200403 11:13:33.882"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:25.343" endtime="20200402 17:07:25.574"></status>
+<status status="PASS" starttime="20200403 11:13:33.785" endtime="20200403 11:13:33.883"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:25.342" endtime="20200402 17:07:25.575"></status>
+<status status="PASS" starttime="20200403 11:13:33.783" endtime="20200403 11:13:33.886"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:25.342" endtime="20200402 17:07:25.575"></status>
-</kw>
-<status status="FAIL" starttime="20200402 17:07:12.882" endtime="20200402 17:07:25.575"></status>
+<status status="PASS" starttime="20200403 11:13:19.280" endtime="20200403 11:13:33.886"></status>
 </kw>
 <kw name="${LoginScenarioNo} = 1" type="foritem">
 <kw name="Get Row From CSV File" library="DataManager">
@@ -193,20 +188,20 @@
 </assign>
 <kw name="Read Row From Csv File" library="CSV_Reader">
 <assign>
-<var>${Data}</var>
+<var>${row}</var>
 </assign>
-<msg timestamp="20200402 17:07:25.576" level="INFO">${Data} = ['hakan.cuzdan@gmail.com', 'InvalidPassword', 'Your username and/or password is incorrect. Please try again.']</msg>
-<status status="PASS" starttime="20200402 17:07:25.576" endtime="20200402 17:07:25.576"></status>
+<msg timestamp="20200403 11:13:33.891" level="INFO">${row} = ['hakan.cuzdan@gmail.com', 'InvalidPassword', 'Forgot Your Password?']</msg>
+<status status="PASS" starttime="20200403 11:13:33.889" endtime="20200403 11:13:33.891"></status>
 </kw>
-<msg timestamp="20200402 17:07:25.576" level="INFO">${LoginScenario} = ['hakan.cuzdan@gmail.com', 'InvalidPassword', 'Your username and/or password is incorrect. Please try again.']</msg>
-<status status="PASS" starttime="20200402 17:07:25.575" endtime="20200402 17:07:25.576"></status>
+<msg timestamp="20200403 11:13:33.892" level="INFO">${LoginScenario} = ['hakan.cuzdan@gmail.com', 'InvalidPassword', 'Forgot Your Password?']</msg>
+<status status="PASS" starttime="20200403 11:13:33.887" endtime="20200403 11:13:33.893"></status>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
 <arguments>
 <arg>$LoginScenario is None</arg>
 </arguments>
-<status status="PASS" starttime="20200402 17:07:25.576" endtime="20200402 17:07:25.577"></status>
+<status status="PASS" starttime="20200403 11:13:33.893" endtime="20200403 11:13:33.897"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -224,20 +219,20 @@
 <assign>
 <var>${SignInUrl}</var>
 </assign>
-<msg timestamp="20200402 17:07:25.578" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
-<status status="PASS" starttime="20200402 17:07:25.578" endtime="20200402 17:07:25.578"></status>
+<msg timestamp="20200403 11:13:33.902" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20200403 11:13:33.901" endtime="20200403 11:13:33.902"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${SignInUrl}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:25.578" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
-<status status="PASS" starttime="20200402 17:07:25.578" endtime="20200402 17:07:28.331"></status>
+<msg timestamp="20200403 11:13:33.903" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20200403 11:13:33.902" endtime="20200403 11:13:37.664"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:25.577" endtime="20200402 17:07:28.332"></status>
+<status status="PASS" starttime="20200403 11:13:33.900" endtime="20200403 11:13:37.665"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:25.577" endtime="20200402 17:07:28.332"></status>
+<status status="PASS" starttime="20200403 11:13:33.897" endtime="20200403 11:13:37.665"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -267,10 +262,10 @@
 <arg>${SIGN_IN_EMAIL_FIELD}</arg>
 <arg>${Credentials[0]}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:28.340" level="INFO">Typing text 'hakan.cuzdan@gmail.com' into text field 'xpath=//input[@ng-model='$ctrl.credentials.email']'.</msg>
-<status status="PASS" starttime="20200402 17:07:28.339" endtime="20200402 17:07:28.795"></status>
+<msg timestamp="20200403 11:13:37.670" level="INFO">Typing text 'hakan.cuzdan@gmail.com' into text field 'xpath=//input[@ng-model='$ctrl.credentials.email']'.</msg>
+<status status="PASS" starttime="20200403 11:13:37.669" endtime="20200403 11:13:38.506"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:28.333" endtime="20200402 17:07:28.795"></status>
+<status status="PASS" starttime="20200403 11:13:37.668" endtime="20200403 11:13:38.506"></status>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
@@ -286,12 +281,12 @@
 <arg>${SIGN_IN_PASSWORD_FIELD}</arg>
 <arg>${Credentials[1]}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:28.796" level="INFO">Typing text 'InvalidPassword' into text field 'xpath=//input[@ng-model='$ctrl.credentials.password']'.</msg>
-<status status="PASS" starttime="20200402 17:07:28.796" endtime="20200402 17:07:29.160"></status>
+<msg timestamp="20200403 11:13:38.507" level="INFO">Typing text 'InvalidPassword' into text field 'xpath=//input[@ng-model='$ctrl.credentials.password']'.</msg>
+<status status="PASS" starttime="20200403 11:13:38.507" endtime="20200403 11:13:38.812"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:28.795" endtime="20200402 17:07:29.160"></status>
+<status status="PASS" starttime="20200403 11:13:38.506" endtime="20200403 11:13:38.812"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:28.332" endtime="20200402 17:07:29.160"></status>
+<status status="PASS" starttime="20200403 11:13:37.668" endtime="20200403 11:13:38.812"></status>
 </kw>
 <kw name="Click Submit" library="SignIn">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -299,22 +294,22 @@
 <arguments>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:29.161" level="INFO">Clicking button 'Log In'.</msg>
-<status status="PASS" starttime="20200402 17:07:29.161" endtime="20200402 17:07:29.690"></status>
+<msg timestamp="20200403 11:13:38.813" level="INFO">Clicking button 'Log In'.</msg>
+<status status="PASS" starttime="20200403 11:13:38.813" endtime="20200403 11:13:39.536"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:29.161" endtime="20200402 17:07:29.690"></status>
+<status status="PASS" starttime="20200403 11:13:38.812" endtime="20200403 11:13:39.537"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200402 17:07:32.696" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200402 17:07:29.691" endtime="20200402 17:07:32.696"></status>
+<msg timestamp="20200403 11:13:42.538" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200403 11:13:39.537" endtime="20200403 11:13:42.539"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:28.332" endtime="20200402 17:07:32.696"></status>
+<status status="PASS" starttime="20200403 11:13:37.667" endtime="20200403 11:13:42.539"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:28.332" endtime="20200402 17:07:32.696"></status>
+<status status="PASS" starttime="20200403 11:13:37.667" endtime="20200403 11:13:42.540"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -335,21 +330,16 @@
 <arguments>
 <arg>${ExpectedErrorMessage}</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200402 17:07:32.981" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200402 17:07:32.890" endtime="20200402 17:07:32.981"></status>
+<msg timestamp="20200403 11:13:42.618" level="INFO">Current page contains text 'Forgot Your Password?'.</msg>
+<status status="PASS" starttime="20200403 11:13:42.547" endtime="20200403 11:13:42.618"></status>
 </kw>
-<msg timestamp="20200402 17:07:32.981" level="FAIL">Page should have contained text 'Your username and/or password is incorrect. Please try again.' but did not.</msg>
-<status status="FAIL" starttime="20200402 17:07:32.697" endtime="20200402 17:07:32.981"></status>
+<status status="PASS" starttime="20200403 11:13:42.545" endtime="20200403 11:13:42.619"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:32.697" endtime="20200402 17:07:32.981"></status>
+<status status="PASS" starttime="20200403 11:13:42.543" endtime="20200403 11:13:42.619"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:32.696" endtime="20200402 17:07:32.982"></status>
+<status status="PASS" starttime="20200403 11:13:42.541" endtime="20200403 11:13:42.621"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:32.696" endtime="20200402 17:07:32.982"></status>
-</kw>
-<status status="FAIL" starttime="20200402 17:07:25.575" endtime="20200402 17:07:32.982"></status>
+<status status="PASS" starttime="20200403 11:13:33.886" endtime="20200403 11:13:42.621"></status>
 </kw>
 <kw name="${LoginScenarioNo} = 2" type="foritem">
 <kw name="Get Row From CSV File" library="DataManager">
@@ -358,20 +348,20 @@
 </assign>
 <kw name="Read Row From Csv File" library="CSV_Reader">
 <assign>
-<var>${Data}</var>
+<var>${row}</var>
 </assign>
-<msg timestamp="20200402 17:07:32.982" level="INFO">${Data} = ['#BLANK', '#BLANK', 'Please enter your email address and password.']</msg>
-<status status="PASS" starttime="20200402 17:07:32.982" endtime="20200402 17:07:32.983"></status>
+<msg timestamp="20200403 11:13:42.626" level="INFO">${row} = ['#BLANK', '#BLANK', 'Please enter your email address and password.']</msg>
+<status status="PASS" starttime="20200403 11:13:42.625" endtime="20200403 11:13:42.627"></status>
 </kw>
-<msg timestamp="20200402 17:07:32.983" level="INFO">${LoginScenario} = ['#BLANK', '#BLANK', 'Please enter your email address and password.']</msg>
-<status status="PASS" starttime="20200402 17:07:32.982" endtime="20200402 17:07:32.983"></status>
+<msg timestamp="20200403 11:13:42.628" level="INFO">${LoginScenario} = ['#BLANK', '#BLANK', 'Please enter your email address and password.']</msg>
+<status status="PASS" starttime="20200403 11:13:42.623" endtime="20200403 11:13:42.628"></status>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
 <arguments>
 <arg>$LoginScenario is None</arg>
 </arguments>
-<status status="PASS" starttime="20200402 17:07:32.983" endtime="20200402 17:07:32.985"></status>
+<status status="PASS" starttime="20200403 11:13:42.629" endtime="20200403 11:13:42.633"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -389,20 +379,20 @@
 <assign>
 <var>${SignInUrl}</var>
 </assign>
-<msg timestamp="20200402 17:07:32.986" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
-<status status="PASS" starttime="20200402 17:07:32.986" endtime="20200402 17:07:32.986"></status>
+<msg timestamp="20200403 11:13:42.639" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20200403 11:13:42.637" endtime="20200403 11:13:42.639"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${SignInUrl}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:32.986" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
-<status status="PASS" starttime="20200402 17:07:32.986" endtime="20200402 17:07:36.520"></status>
+<msg timestamp="20200403 11:13:42.641" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20200403 11:13:42.640" endtime="20200403 11:13:46.217"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:32.986" endtime="20200402 17:07:36.520"></status>
+<status status="PASS" starttime="20200403 11:13:42.636" endtime="20200403 11:13:46.218"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:32.985" endtime="20200402 17:07:36.520"></status>
+<status status="PASS" starttime="20200403 11:13:42.633" endtime="20200403 11:13:46.218"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -426,7 +416,7 @@
 <arg>${SIGN_IN_EMAIL_FIELD}</arg>
 <arg>${Credentials[0]}</arg>
 </arguments>
-<status status="PASS" starttime="20200402 17:07:36.522" endtime="20200402 17:07:36.522"></status>
+<status status="PASS" starttime="20200403 11:13:46.222" endtime="20200403 11:13:46.223"></status>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
@@ -436,9 +426,9 @@
 <arg>${SIGN_IN_PASSWORD_FIELD}</arg>
 <arg>${Credentials[1]}</arg>
 </arguments>
-<status status="PASS" starttime="20200402 17:07:36.522" endtime="20200402 17:07:36.527"></status>
+<status status="PASS" starttime="20200403 11:13:46.223" endtime="20200403 11:13:46.223"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:36.522" endtime="20200402 17:07:36.527"></status>
+<status status="PASS" starttime="20200403 11:13:46.222" endtime="20200403 11:13:46.223"></status>
 </kw>
 <kw name="Click Submit" library="SignIn">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -446,22 +436,22 @@
 <arguments>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:36.528" level="INFO">Clicking button 'Log In'.</msg>
-<status status="PASS" starttime="20200402 17:07:36.528" endtime="20200402 17:07:37.112"></status>
+<msg timestamp="20200403 11:13:46.224" level="INFO">Clicking button 'Log In'.</msg>
+<status status="PASS" starttime="20200403 11:13:46.224" endtime="20200403 11:13:47.888"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:36.527" endtime="20200402 17:07:37.112"></status>
+<status status="PASS" starttime="20200403 11:13:46.223" endtime="20200403 11:13:47.888"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200402 17:07:40.113" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200402 17:07:37.112" endtime="20200402 17:07:40.113"></status>
+<msg timestamp="20200403 11:13:50.889" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200403 11:13:47.888" endtime="20200403 11:13:50.890"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:36.521" endtime="20200402 17:07:40.113"></status>
+<status status="PASS" starttime="20200403 11:13:46.220" endtime="20200403 11:13:50.890"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:36.520" endtime="20200402 17:07:40.113"></status>
+<status status="PASS" starttime="20200403 11:13:46.220" endtime="20200403 11:13:50.891"></status>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
@@ -482,16 +472,16 @@
 <arguments>
 <arg>${ExpectedErrorMessage}</arg>
 </arguments>
-<msg timestamp="20200402 17:07:40.128" level="INFO">Current page contains text 'Please enter your email address and password.'.</msg>
-<status status="PASS" starttime="20200402 17:07:40.114" endtime="20200402 17:07:40.129"></status>
+<msg timestamp="20200403 11:13:50.968" level="INFO">Current page contains text 'Please enter your email address and password.'.</msg>
+<status status="PASS" starttime="20200403 11:13:50.897" endtime="20200403 11:13:50.969"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:40.114" endtime="20200402 17:07:40.129"></status>
+<status status="PASS" starttime="20200403 11:13:50.895" endtime="20200403 11:13:50.969"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:40.113" endtime="20200402 17:07:40.129"></status>
+<status status="PASS" starttime="20200403 11:13:50.893" endtime="20200403 11:13:50.970"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:40.113" endtime="20200402 17:07:40.129"></status>
+<status status="PASS" starttime="20200403 11:13:50.891" endtime="20200403 11:13:50.971"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:32.982" endtime="20200402 17:07:40.129"></status>
+<status status="PASS" starttime="20200403 11:13:42.621" endtime="20200403 11:13:50.971"></status>
 </kw>
 <kw name="${LoginScenarioNo} = 3" type="foritem">
 <kw name="Get Row From CSV File" library="DataManager">
@@ -500,53 +490,468 @@
 </assign>
 <kw name="Read Row From Csv File" library="CSV_Reader">
 <assign>
-<var>${Data}</var>
+<var>${row}</var>
 </assign>
-<msg timestamp="20200402 17:07:40.129" level="INFO">${Data} = None</msg>
-<status status="PASS" starttime="20200402 17:07:40.129" endtime="20200402 17:07:40.130"></status>
+<msg timestamp="20200403 11:13:50.974" level="INFO">${row} = None</msg>
+<status status="PASS" starttime="20200403 11:13:50.973" endtime="20200403 11:13:50.974"></status>
 </kw>
-<msg timestamp="20200402 17:07:40.130" level="INFO">${LoginScenario} = None</msg>
-<status status="PASS" starttime="20200402 17:07:40.129" endtime="20200402 17:07:40.130"></status>
+<msg timestamp="20200403 11:13:50.975" level="INFO">${LoginScenario} = None</msg>
+<status status="PASS" starttime="20200403 11:13:50.972" endtime="20200403 11:13:50.976"></status>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
 <arguments>
 <arg>$LoginScenario is None</arg>
 </arguments>
-<msg timestamp="20200402 17:07:40.130" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20200402 17:07:40.130" endtime="20200402 17:07:40.131"></status>
+<msg timestamp="20200403 11:13:50.981" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200403 11:13:50.977" endtime="20200403 11:13:50.981"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:40.129" endtime="20200402 17:07:40.131"></status>
+<status status="PASS" starttime="20200403 11:13:50.971" endtime="20200403 11:13:50.982"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:12.880" endtime="20200402 17:07:40.132"></status>
+<status status="PASS" starttime="20200403 11:13:19.254" endtime="20200403 11:13:50.991"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:12.880" endtime="20200402 17:07:40.132"></status>
+<kw name="Get Rows From JSON File" library="DataManager">
+<assign>
+<var>@{LOGIN_SCENARIOS}</var>
+</assign>
+<kw name="Read Json File" library="JSON_Reader">
+<arguments>
+<arg>${INVALID_CREDENTIALS_PATH_JSON}</arg>
+</arguments>
+<assign>
+<var>${rows}</var>
+</assign>
+<msg timestamp="20200403 11:13:50.997" level="INFO">${rows} = [['unregistered.user@gmail.com', 'TestPassword!', 'Your username and/or password is incorrect. Please try again.'], ['hakan.cuzdan@gmail.com', 'InvalidPassword', 'Forgot Your Password?'], ['#BLANK', '...</msg>
+<status status="PASS" starttime="20200403 11:13:50.994" endtime="20200403 11:13:50.998"></status>
+</kw>
+<msg timestamp="20200403 11:13:50.998" level="INFO">@{LOGIN_SCENARIOS} = [ ['unregistered.user@gmail.com', 'TestPassword!', 'Your username and/or password is incorrect. Please try again.'] | ['hakan.cuzdan@gmail.com', 'InvalidPassword', 'Forgot Your Password?'] | ['#BLANK'...</msg>
+<status status="PASS" starttime="20200403 11:13:50.992" endtime="20200403 11:13:50.999"></status>
+</kw>
+<kw name="${LOGIN_SCENARIO} IN [ @{LOGIN_SCENARIOS} ]" type="for">
+<kw name="${LOGIN_SCENARIO} = ['unregistered.user@gmail.com', 'TestPassword!', 'Your username and/or password is incorrect. Please try again.']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>SignIn.Navigate To</arg>
+</arguments>
+<kw name="Navigate To" library="SignIn">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=/</arg>
+<arg>${BASE_URL}[${ENVIRONMENT}]</arg>
+<arg>${LOGIN_URL}</arg>
+</arguments>
+<assign>
+<var>${SignInUrl}</var>
+</assign>
+<msg timestamp="20200403 11:13:51.011" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20200403 11:13:51.007" endtime="20200403 11:13:51.011"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${SignInUrl}</arg>
+</arguments>
+<msg timestamp="20200403 11:13:51.014" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20200403 11:13:51.011" endtime="20200403 11:13:54.721"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:51.006" endtime="20200403 11:13:54.721"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:51.005" endtime="20200403 11:13:54.721"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Attempt Login</arg>
+<arg>${LOGIN_SCENARIO}</arg>
+</arguments>
+<kw name="Attempt Login" library="CarsApp">
+<arguments>
+<arg>${LOGIN_SCENARIO}</arg>
+</arguments>
+<kw name="Enter Credentials" library="SignIn">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[0]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL_FIELD}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL_FIELD}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<msg timestamp="20200403 11:13:54.736" level="INFO">Typing text 'unregistered.user@gmail.com' into text field 'xpath=//input[@ng-model='$ctrl.credentials.email']'.</msg>
+<status status="PASS" starttime="20200403 11:13:54.723" endtime="20200403 11:13:56.007"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:54.723" endtime="20200403 11:13:56.007"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[1]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD_FIELD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD_FIELD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<msg timestamp="20200403 11:13:56.008" level="INFO">Typing text 'TestPassword!' into text field 'xpath=//input[@ng-model='$ctrl.credentials.password']'.</msg>
+<status status="PASS" starttime="20200403 11:13:56.008" endtime="20200403 11:13:56.493"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:56.007" endtime="20200403 11:13:56.493"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:54.722" endtime="20200403 11:13:56.493"></status>
+</kw>
+<kw name="Click Submit" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200403 11:13:56.494" level="INFO">Clicking button 'Log In'.</msg>
+<status status="PASS" starttime="20200403 11:13:56.494" endtime="20200403 11:13:56.986"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:56.493" endtime="20200403 11:13:56.987"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200403 11:13:59.993" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200403 11:13:56.987" endtime="20200403 11:13:59.994"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:54.722" endtime="20200403 11:13:59.997"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:54.721" endtime="20200403 11:13:59.998"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Verify Login Page Error Message</arg>
+<arg>${LOGIN_SCENARIO[2]}</arg>
+</arguments>
+<kw name="Verify Login Page Error Message" library="CarsApp">
+<arguments>
+<arg>${LOGIN_SCENARIO[2]}</arg>
+</arguments>
+<kw name="Verify Error Message" library="SignIn">
+<arguments>
+<arg>${ExpectedErrorMessage}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:00.185" level="INFO">Current page contains text 'Your username and/or password is incorrect. Please try again.'.</msg>
+<status status="PASS" starttime="20200403 11:14:00.023" endtime="20200403 11:14:00.185"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:00.021" endtime="20200403 11:14:00.185"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:00.016" endtime="20200403 11:14:00.185"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:00.008" endtime="20200403 11:14:00.185"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:51.000" endtime="20200403 11:14:00.186"></status>
+</kw>
+<kw name="${LOGIN_SCENARIO} = ['hakan.cuzdan@gmail.com', 'InvalidPassword', 'Forgot Your Password?']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>SignIn.Navigate To</arg>
+</arguments>
+<kw name="Navigate To" library="SignIn">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=/</arg>
+<arg>${BASE_URL}[${ENVIRONMENT}]</arg>
+<arg>${LOGIN_URL}</arg>
+</arguments>
+<assign>
+<var>${SignInUrl}</var>
+</assign>
+<msg timestamp="20200403 11:14:00.187" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20200403 11:14:00.187" endtime="20200403 11:14:00.188"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${SignInUrl}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:00.188" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20200403 11:14:00.188" endtime="20200403 11:14:03.419"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:00.186" endtime="20200403 11:14:03.419"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:00.186" endtime="20200403 11:14:03.419"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Attempt Login</arg>
+<arg>${LOGIN_SCENARIO}</arg>
+</arguments>
+<kw name="Attempt Login" library="CarsApp">
+<arguments>
+<arg>${LOGIN_SCENARIO}</arg>
+</arguments>
+<kw name="Enter Credentials" library="SignIn">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[0]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL_FIELD}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL_FIELD}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:03.422" level="INFO">Typing text 'hakan.cuzdan@gmail.com' into text field 'xpath=//input[@ng-model='$ctrl.credentials.email']'.</msg>
+<status status="PASS" starttime="20200403 11:14:03.421" endtime="20200403 11:14:04.221"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:03.421" endtime="20200403 11:14:04.221"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[1]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD_FIELD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD_FIELD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:04.223" level="INFO">Typing text 'InvalidPassword' into text field 'xpath=//input[@ng-model='$ctrl.credentials.password']'.</msg>
+<status status="PASS" starttime="20200403 11:14:04.222" endtime="20200403 11:14:04.715"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:04.221" endtime="20200403 11:14:04.715"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:03.420" endtime="20200403 11:14:04.715"></status>
+</kw>
+<kw name="Click Submit" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:04.716" level="INFO">Clicking button 'Log In'.</msg>
+<status status="PASS" starttime="20200403 11:14:04.716" endtime="20200403 11:14:05.333"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:04.715" endtime="20200403 11:14:05.333"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200403 11:14:08.334" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200403 11:14:05.334" endtime="20200403 11:14:08.335"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:03.420" endtime="20200403 11:14:08.336"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:03.419" endtime="20200403 11:14:08.336"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Verify Login Page Error Message</arg>
+<arg>${LOGIN_SCENARIO[2]}</arg>
+</arguments>
+<kw name="Verify Login Page Error Message" library="CarsApp">
+<arguments>
+<arg>${LOGIN_SCENARIO[2]}</arg>
+</arguments>
+<kw name="Verify Error Message" library="SignIn">
+<arguments>
+<arg>${ExpectedErrorMessage}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:08.428" level="INFO">Current page contains text 'Forgot Your Password?'.</msg>
+<status status="PASS" starttime="20200403 11:14:08.343" endtime="20200403 11:14:08.431"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:08.340" endtime="20200403 11:14:08.434"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:08.338" endtime="20200403 11:14:08.434"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:08.337" endtime="20200403 11:14:08.435"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:00.186" endtime="20200403 11:14:08.435"></status>
+</kw>
+<kw name="${LOGIN_SCENARIO} = ['#BLANK', '#BLANK', 'Please enter your email address and password.']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>SignIn.Navigate To</arg>
+</arguments>
+<kw name="Navigate To" library="SignIn">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=/</arg>
+<arg>${BASE_URL}[${ENVIRONMENT}]</arg>
+<arg>${LOGIN_URL}</arg>
+</arguments>
+<assign>
+<var>${SignInUrl}</var>
+</assign>
+<msg timestamp="20200403 11:14:08.440" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20200403 11:14:08.439" endtime="20200403 11:14:08.441"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${SignInUrl}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:08.443" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20200403 11:14:08.442" endtime="20200403 11:14:11.652"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:08.437" endtime="20200403 11:14:11.652"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:08.436" endtime="20200403 11:14:11.652"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Attempt Login</arg>
+<arg>${LOGIN_SCENARIO}</arg>
+</arguments>
+<kw name="Attempt Login" library="CarsApp">
+<arguments>
+<arg>${LOGIN_SCENARIO}</arg>
+</arguments>
+<kw name="Enter Credentials" library="SignIn">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[0]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL_FIELD}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200403 11:14:11.654" endtime="20200403 11:14:11.654"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[1]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD_FIELD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20200403 11:14:11.655" endtime="20200403 11:14:11.655"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:11.653" endtime="20200403 11:14:11.655"></status>
+</kw>
+<kw name="Click Submit" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:11.656" level="INFO">Clicking button 'Log In'.</msg>
+<status status="PASS" starttime="20200403 11:14:11.656" endtime="20200403 11:14:13.403"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:11.655" endtime="20200403 11:14:13.404"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200403 11:14:16.405" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200403 11:14:13.404" endtime="20200403 11:14:16.406"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:11.653" endtime="20200403 11:14:16.406"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:11.652" endtime="20200403 11:14:16.407"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Verify Login Page Error Message</arg>
+<arg>${LOGIN_SCENARIO[2]}</arg>
+</arguments>
+<kw name="Verify Login Page Error Message" library="CarsApp">
+<arguments>
+<arg>${LOGIN_SCENARIO[2]}</arg>
+</arguments>
+<kw name="Verify Error Message" library="SignIn">
+<arguments>
+<arg>${ExpectedErrorMessage}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage}</arg>
+</arguments>
+<msg timestamp="20200403 11:14:16.508" level="INFO">Current page contains text 'Please enter your email address and password.'.</msg>
+<status status="PASS" starttime="20200403 11:14:16.413" endtime="20200403 11:14:16.509"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:16.411" endtime="20200403 11:14:16.510"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:16.408" endtime="20200403 11:14:16.511"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:16.407" endtime="20200403 11:14:16.511"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:14:08.435" endtime="20200403 11:14:16.512"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:50.999" endtime="20200403 11:14:16.512"></status>
+</kw>
+<status status="PASS" starttime="20200403 11:13:19.250" endtime="20200403 11:14:16.514"></status>
 </kw>
 <kw name="End Web Test" library="Common" type="teardown">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20200402 17:07:40.132" endtime="20200402 17:07:44.320"></status>
+<status status="PASS" starttime="20200403 11:14:16.520" endtime="20200403 11:14:26.366"></status>
 </kw>
-<status status="PASS" starttime="20200402 17:07:40.132" endtime="20200402 17:07:44.321"></status>
+<status status="PASS" starttime="20200403 11:14:16.516" endtime="20200403 11:14:26.366"></status>
 </kw>
-<status status="FAIL" starttime="20200402 17:07:06.227" endtime="20200402 17:07:44.321" critical="yes">Several failures occurred:
-
-1) Page should have contained text 'Your username and/or password is incorrect. Please try again.' but did not.
-
-2) Page should have contained text 'Your username and/or password is incorrect. Please try again.' but did not.</status>
+<status status="PASS" starttime="20200403 11:13:10.775" endtime="20200403 11:14:26.367" critical="yes"></status>
 </test>
 <doc>Demonstrate a need for data-driven testing</doc>
-<status status="FAIL" starttime="20200402 17:07:06.097" endtime="20200402 17:07:44.322"></status>
+<status status="PASS" starttime="20200403 11:13:10.574" endtime="20200403 11:14:26.369"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Cars">Cars</stat>
+<stat pass="1" fail="0" id="s1" name="Cars">Cars</stat>
 </suite>
 </statistics>
 <errors>
